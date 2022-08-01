@@ -1,0 +1,14 @@
+---
+- name: Install docker
+  import_tasks: docker.yml
+  become: true
+
+- name: Install nvm
+  import_tasks: nvm.yml
+
+- name: Install rust
+  import_tasks: rust.yml
+
+- name: Install go
+  import_tasks: go.yml
+  become: true

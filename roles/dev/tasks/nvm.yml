@@ -1,0 +1,10 @@
+---
+- name: Clone nvm
+  git:
+    repo: https://github.com/nvm-sh/nvm.git
+    dest: "{{ home }}/.nvm"
+    version: v0.39.1
+
+- name: Source nvm
+  shell:
+    cmd: ". {{ home }}/.nvm/nvm.sh"

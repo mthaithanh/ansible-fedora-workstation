@@ -1,0 +1,19 @@
+---
+- name: Install docker
+  dnf:
+    name:
+      - docker
+      - docker-compose
+    state: latest
+
+- name: Create docker group
+  group:
+    name: docker
+    state: present
+    system: yes
+
+- name: Add user to docker group
+  user:
+    name: "{{ user }}"
+    groups: docker
+    append: yes
