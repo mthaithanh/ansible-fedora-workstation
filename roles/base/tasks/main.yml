@@ -1,0 +1,11 @@
+---
+- name: Install repositories
+  import_tasks: repositories.yml
+  become: true
+
+- name: Install packages
+  import_tasks: packages.yml
+  become: true
+
+- name: Configure shell
+  import_tasks: shell.yml

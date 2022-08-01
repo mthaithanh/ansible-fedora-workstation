@@ -1,0 +1,48 @@
+---
+- name: Change shell
+  user:
+    name: "{{ user }}"
+
+- name: Clone oh-my-zsh
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: "{{ zsh.root }}"
+
+- name: Clone powerlevel10k theme
+  git:
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: "{{ zsh.themes }}/powerlevel10k"
+    depth: 1
+
+- name: Clone zsh-autosuggestions plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git
+    dest: "{{ zsh.plugins }}/zsh-autosuggestions"
+    depth: 1
+
+- name: Clone zsh-completions plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-completions.git
+    dest: "{{ zsh.plugins }}/zsh-completions"
+    depth: 1
+
+- name: Clone zsh-syntax-highlightings plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: "{{ zsh.plugins }}/zsh-syntax-highlighting"
+    depth: 1
+
+- name: Copy .zshrc file
+  copy:
+    src: zsh/zshrc
+    dest: "{{ home }}/.zshrc"
+
+- name: Copy .zshenv file
+  copy:
+    src: zsh/zshenv
+    dest: "{{ home }}/.zshenv"
+
+- name: Copy .aliasrc file
+  copy:
+    src: zsh/aliasrc
+    dest: "{{ home }}/.aliasrc"

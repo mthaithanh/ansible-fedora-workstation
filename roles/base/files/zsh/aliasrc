@@ -1,0 +1,3 @@
+alias ll="exa"
+alias q="exit"
+alias vim="nvim"

@@ -1,0 +1,22 @@
+install_packages:
+  - code
+  - chromium
+  - discord
+  - exa
+  - fzf
+  - gnome-tweaks
+  - neovim
+  - steam
+  - stow
+  - tmux
+  - util-linux-user
+  - zsh
+
+home: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+
+user: "{{ lookup('ansible.builtin.env', 'USER') }}"
+
+zsh:
+  root: "{{ home }}/.config/oh-my-zsh"
+  themes: "{{ home }}/.config/oh-my-zsh/custom/themes"
+  plugins: "{{ home }}/.config/oh-my-zsh/custom/plugins"
