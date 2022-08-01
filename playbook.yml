@@ -1,0 +1,7 @@
+---
+- name: Setup fedora
+  hosts: all
+
+  roles:
+    - base
+    - dev
